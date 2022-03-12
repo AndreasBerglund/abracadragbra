@@ -1,4 +1,4 @@
-import { DragEvent, MouseEvent, TouchEvent, useState } from "react";
+import { DragEvent, MouseEvent, useState } from "react";
 
 interface DragBoxInterface {
   id: string;

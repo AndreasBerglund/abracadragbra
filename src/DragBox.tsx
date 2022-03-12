@@ -12,8 +12,8 @@ const DragBox = ({ id, isSelected, onSelect, numBoxes }: DragBoxInterface) => {
   const [isDragging, setIsDragging] = useState(false);
   const dimension = { width: 300, height: 300 }; //width and height in pixels
   const [position, setPosition] = useState({
-    x: window.innerWidth / 2 - dimension.width / 2 + 30 * numBoxes,
-    y: window.innerHeight / 2 - dimension.height / 2 - 30 * numBoxes,
+    x: window.innerWidth / 2 - dimension.width / 2 + 30 * (numBoxes - 1),
+    y: window.innerHeight / 2 - dimension.height / 2 - 30 * (numBoxes - 2),
   });
 
   const handleClick = (event: MouseEvent<HTMLDivElement>) => {

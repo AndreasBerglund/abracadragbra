@@ -71,13 +71,13 @@ const DragField = () => {
       >
         <Button
           isDisabled={false}
-          buttonText="ADD BOX"
+          buttonText="ADD A CARD"
           handleClick={handleAddBox}
         />
 
         <Button
           isDisabled={!selectedBox}
-          buttonText="REMOVE BOX"
+          buttonText="REMOVE A CARD"
           handleClick={handleRemove}
         />
       </div>

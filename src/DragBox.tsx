@@ -9,7 +9,7 @@ interface DragBoxInterface {
 const DragBox = ({ id, isSelected, onSelect }: DragBoxInterface) => {
   const [dragPoint, setDragPoint] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
-  const dimension = { width: 200, height: 200 }; //width and height in pixels
+  const dimension = { width: 300, height: 300 }; //width and height in pixels
   const [position, setPosition] = useState({
     x: window.innerWidth / 2 - dimension.width / 2,
     y: window.innerHeight / 2 - dimension.height / 2,
@@ -60,9 +60,9 @@ const DragBox = ({ id, isSelected, onSelect }: DragBoxInterface) => {
         overflow: "hidden",
         top: position.y,
         left: position.x,
-        borderRadius: 6,
+        borderRadius: 16,
         boxShadow: isDragging ? "2px 2px 15px #333" : "none",
-        outline: "6px solid #333",
+        border: "6px solid #333",
         zIndex: isDragging || isSelected ? 1 : 0,
       }}
     >
@@ -99,18 +99,6 @@ const DragBox = ({ id, isSelected, onSelect }: DragBoxInterface) => {
           ></span>
         </>
       )}
-
-      <div
-        style={{
-          width: 10,
-          height: 10,
-          background: "black",
-          borderRadius: 10,
-          position: "absolute",
-          left: dragPoint.x,
-          top: dragPoint.y,
-        }}
-      ></div>
     </div>
   );
 };

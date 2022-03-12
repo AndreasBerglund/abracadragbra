@@ -4,15 +4,16 @@ interface DragBoxInterface {
   id: string;
   isSelected: boolean;
   onSelect: Function;
+  numBoxes: number;
 }
 
-const DragBox = ({ id, isSelected, onSelect }: DragBoxInterface) => {
+const DragBox = ({ id, isSelected, onSelect, numBoxes }: DragBoxInterface) => {
   const [dragPoint, setDragPoint] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const dimension = { width: 300, height: 300 }; //width and height in pixels
   const [position, setPosition] = useState({
-    x: window.innerWidth / 2 - dimension.width / 2,
-    y: window.innerHeight / 2 - dimension.height / 2,
+    x: window.innerWidth / 2 - dimension.width / 2 + 30 * numBoxes,
+    y: window.innerHeight / 2 - dimension.height / 2 - 30 * numBoxes,
   });
 
   const handleClick = (event: MouseEvent<HTMLDivElement>) => {
@@ -62,7 +63,7 @@ const DragBox = ({ id, isSelected, onSelect }: DragBoxInterface) => {
         left: position.x,
         borderRadius: 16,
         boxShadow: isDragging ? "2px 2px 15px #333" : "none",
-        border: "6px solid #333",
+        border: "10px solid #333",
         zIndex: isDragging || isSelected ? 1 : 0,
       }}
     >
@@ -78,7 +79,7 @@ const DragBox = ({ id, isSelected, onSelect }: DragBoxInterface) => {
           <span
             style={{
               width: "100%",
-              height: "6px",
+              height: "10px",
               position: "absolute",
               top: "50%",
               left: "50%",
@@ -89,7 +90,7 @@ const DragBox = ({ id, isSelected, onSelect }: DragBoxInterface) => {
           <span
             style={{
               width: "100%",
-              height: "6px",
+              height: "10px",
               position: "absolute",
               top: "50%",
               left: "50%",

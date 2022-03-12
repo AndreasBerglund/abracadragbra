@@ -12,7 +12,7 @@ const Wand = ({ x, y }: WandInterface) => {
 
         background: "url('wand.png')",
         backgroundSize: "100%",
-        position: "absolute",
+        position: "fixed",
         left: x - 30,
         top: y - 30,
         zIndex: 10,

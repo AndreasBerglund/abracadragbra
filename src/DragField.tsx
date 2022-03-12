@@ -39,6 +39,7 @@ const DragField = () => {
       style={{
         width: "100%",
         height: "100%",
+
         display: "flex",
         flexDirection: "column",
         background: "#efefef",
@@ -51,6 +52,7 @@ const DragField = () => {
         <Wand x={wandPosition.x} y={wandPosition.y} />
         {boxes.map((box) => (
           <DragBox
+            numBoxes={boxes.length}
             key={box}
             id={box}
             isSelected={selectedBox === box}

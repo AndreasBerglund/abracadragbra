@@ -54,20 +54,51 @@ const DragBox = ({ id, isSelected, onSelect }: DragBoxInterface) => {
       style={{
         width: dimension.width,
         height: dimension.height,
-        background: "#ccc",
+        background: "linear-gradient(45deg, #00C9FF 0%, #92FE9D 100%)",
         position: "absolute",
-        // padding: 20,
+
+        overflow: "hidden",
         top: position.y,
         left: position.x,
+        borderRadius: 6,
         boxShadow: isDragging ? "2px 2px 15px #333" : "none",
-        outline: isSelected ? "5px solid #333" : "1px solid #333",
+        outline: "6px solid #333",
         zIndex: isDragging || isSelected ? 1 : 0,
       }}
     >
-      <p>{id}</p>
-      <p>
-        {position.x}, {position.y}
-      </p>
+      <div style={{ display: "none" }}>
+        <p>{id}</p>
+        <p>
+          {position.x}, {position.y}
+        </p>
+      </div>
+
+      {isSelected && (
+        <>
+          <span
+            style={{
+              width: "100%",
+              height: "6px",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              background: "#333",
+              transform: "translate(-50%,-50%) rotate(45deg)",
+            }}
+          ></span>
+          <span
+            style={{
+              width: "100%",
+              height: "6px",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              background: "#333",
+              transform: "translate(-50%,-50%) rotate(-45deg)",
+            }}
+          ></span>
+        </>
+      )}
 
       <div
         style={{

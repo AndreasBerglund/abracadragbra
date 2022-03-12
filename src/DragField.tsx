@@ -1,4 +1,4 @@
-import { useState, DragEvent, MouseEvent } from "react";
+import { useState, DragEvent } from "react";
 import { nanoid } from "nanoid";
 import DragBox from "./DragBox";
 import Button from "./Button";
@@ -10,11 +10,11 @@ const DragField = () => {
     setSelectedBox(id);
   };
 
-  const handleAddBox = (event: MouseEvent<HTMLButtonElement>) => {
+  const handleAddBox = () => {
     setBoxes([...boxes, nanoid()]);
   };
 
-  const handleDeselect = (event: MouseEvent<HTMLDivElement>) => {
+  const handleDeselect = () => {
     setSelectedBox("");
   };
 

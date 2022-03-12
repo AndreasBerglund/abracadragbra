@@ -3,8 +3,9 @@ import React from "react";
 const buttonStyling = {
   padding: "10px 18px",
   margin: "8px",
-  border: "5px solid #333",
+  border: "6px solid #333",
   fontWeight: "900",
+  borderRadius: 6,
 };
 
 const buttonDisabled = {

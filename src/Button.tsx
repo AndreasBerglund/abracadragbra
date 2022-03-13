@@ -1,17 +1,18 @@
 import React from "react";
 
 const buttonStyling = {
-  padding: "10px 14px",
+  padding: "8px 14px",
   margin: "8px",
   border: "6px solid #333",
+  color: "#333",
   fontWeight: "900",
   fontSize: 26,
   borderRadius: 6,
-  cursor: "none",
 };
 
 const buttonDisabled = {
   border: "6px solid #ccc",
+  color: "#ccc",
 };
 
 interface ButtonInterface {
